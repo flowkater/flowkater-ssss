@@ -1,0 +1,370 @@
+
+<!DOCTYPE HTML>
+<html>
+<head xmlns:fb="http://ogp.me/ns/fb#">
+	<meta charset="utf-8">
+	<title>루비 온 레일스 아키텍처 디자인 - Be a Cool hacker</title>
+    <meta name="author" content="Fl0wk27er">
+    
+	<meta name="description" content="영어와 한국어에(..) 익숙치 않아 오역이 많습니다. 감안하고 읽어주시면 감사하겠습니다. 지적 또한 감사히 받겠습니다. 2011년 글인데 번역 연습도 할겸 건드려보았습니다. 당시 레일스 아키텍처 이야기라서 지금이랑 조금 다를 수 있습니다. 1. 소개 루비 온 레일스( &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Be a Cool hacker" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+<meta property="fb:app_id" content="353550678098775" />
+
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-35035555-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        Fl0wk27er
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/flowkater" class="github" title="Github"></a>
+  </li>
+  
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/flowkater" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/Fl0wk27er" class="twitter" title="Twitter"></a>
+  </li>
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+    <li id="ajax"><a href="/about/index.html">About</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">루비 온 레일스 아키텍처 디자인</h2>
+	<div class="entry-content"><p><em><small>영어와 한국어에(..) 익숙치 않아 오역이 많습니다. 감안하고 읽어주시면 감사하겠습니다. 지적 또한 감사히 받겠습니다. 2011년 글인데 번역 연습도 할겸 건드려보았습니다. 당시 레일스 아키텍처 이야기라서 지금이랑 조금 다를 수 있습니다.</small></em></p>
+
+<h1>1. 소개</h1>
+
+<p>루비 온 레일스(RoR)는 Ruby 프로그래밍 언어로 작성한 오픈 소스 웹프레임워크이다. 레일스의 모든 애플리케이션은 Ruby로 작성한. 루비 온 레일스는 생산성과 애자일(agile) 웹 개발 적용에 중점을 두고 있다.</p>
+
+<p>레일스 프레임워크는 Ruby 언어의 특성을 활용한다. 유키히로 마츠모토(Yukishiro Matzumoto)는 1995년, Perl, Eiffel, Python, Smaltalk 와 그 외 다른 언어에 영향을 받아 이 언어를 디자인했다. 동적 타입, 완전한 객체 지향, 범용성을 가진 스크립트 언어 등이 그 특징이다. Ruby는 우아한 문법과 가능하면 사람이 읽기 쉽게 디자인되었는데 예를 들어 콜론(;)이 없어도 되고 메서드 인자에 괄호가 필요없다. 코드 일부는 영어 문장처럼 쉽게 읽을 수 있다. <!-- more --></p>
+
+<p>루비 온 레일스 프레임워크는 데이터베이스 기반의 웹 애플리케이션을 위해 디자인되었다. 루비 온 레일스는 J2EE나 .NET 같은 무거운 웹 프레임워크에 대응하기 위해 만들어졌다. 개발 프로세스를 더 빠르게 만들기 위해서 루비 온 레일스는 관례(Convention)를 사용한다. 그리고 작업을 완료하기 위해서 최상의 방법으로 고려되는 가정들(여기서 이렇다면 저기서는 이럴 거 같다는 가정들)을 사용하고 이러한 관례와 가정의 사용을 장려하도록 디자인되었다. 이 관례는 설정 코드를 제거하고 생산성을 높인다. 웹 개발의 대부분의 공통된 작업들은 바로 바로 작업할 수 있도록 프레임워크에 내장되어 있다. 이메일 관리, 객체 데이터베이스 매퍼, 파일 구조, 코드 제네레이션, 구성 요소들의 네이밍과 조직하는 방법뿐만 아니라 다양한 기능들을 내장하고 있다. 이 모든 관례는  개발자에게 더 적은 코드를 쓰게 하고 애자일(agile) 애플리케이션 개발을 하도록 도와준다. 또한, 루비 온 레일스 개발자 커뮤니티에서 개발 코드에 대한 유지 보수성 및 이해도를 향상할 수 있는 팁들을 얻을 수 있다.</p>
+
+<p>Ruby온 레일스 아키텍쳐가 가지는 특성들:</p>
+
+<ul>
+<li> 모델(Model)-뷰(View)-컨트롤러(Controller) 아키텍쳐</li>
+<li> REST(Representational State Transfer) 웹서비스</li>
+<li> 주요 데이터베이스 지원 (MySQL, Oracle, MS SQL, PostgreSQL, IMB DB2, and more).</li>
+<li> 오픈 소스 서버 사이드 스크립트 언어</li>
+<li> 설정보다는 관례</li>
+<li> 업무를 자동화하는 스크립트 생성자(generator)</li>
+<li> 사람이 읽기 쉬운 직렬화 데이터 포맷인 YAML 사용</li>
+</ul>
+
+
+<p>위 묘사된 특성들은 아래 레일스 구성요소들로 배포된다. Fig. 2 그림에서 이러한 구성요소들 사이의 상호작용을 보여준다:</p>
+
+<ul>
+<li> Action Mailer</li>
+<li> Action Pack
+
+<ul>
+<li>Action Controller</li>
+<li>Action Dispatcher</li>
+<li>Action View</li>
+</ul>
+</li>
+<li> Active Model</li>
+<li> Active Record</li>
+<li> Active Resource</li>
+<li> Active Support</li>
+<li> Railties</li>
+</ul>
+
+
+<p><img src="http://imageshack.us/a/img844/1016/v2k.png" alt="Figure 2. Reference model depicting the overall framework architecture" /></p>
+
+<h2>1.1  모델(Model)-뷰(View)-컨트롤러(Controller) 패턴</h2>
+
+<p>루비 온 레일스는 애플리케이션의 유지보수를 개선하기 위해서 모델(Model)-뷰(View)-컨트롤러(Controller) (MVC) 아키텍쳐 패턴을 사용한다. 모델은 비지니스 로직에 집중하고 뷰는 디스플레이 로직을 관리, 컨트롤러는 애플리케이션의 흐름을 다룬다. MVC 는 HTML뷰로부터 분리된 비지니스 로직을 유지하는 방법으로 문제(관심사)를 깔끔하게 분리해준다. 게다가, MVC는 디커플링(분리)과 테스팅을 개선해준다.</p>
+
+<h3>1.1.1        모델(Model)</h3>
+
+<p>모델 계층은 애플리케이션의 비지니스 로직과 데이터를 조작할 수 있는 규칙들을 수행한다. 루비 온 레일스에서 모델은 데이터베이스 요소들과의 상호작용을 관리하는데 사용된다. 모델은 데이터베이스 내의 정보를 나타내고 적절한 검증을 한다.</p>
+
+<h3>1.1.2        뷰(View)</h3>
+
+<p>뷰는 애플리케이션의 프론트 엔드로 사용자 인터페이스를 나타낸다. 루비 온 레일스에서 뷰는 Ruby 코드가 삽입된 HTML 파일들이다. HTML 내 삽입된 Ruby 코드는 꽤 단순하다(반복문, 조건문). 이 코드들은 뷰의 폼 내에서 사용자에게 데이터를 보여주기 위해서만 사용한다. 웹 페이지를 요청한 브라우저에 데이터를 제공할 때 뷰를 사용한다. 뷰는 HTML, PDF, XML, RSS 같은 몇 가지 형식으로 컨텐츠를 제공할 수 있다.</p>
+
+<h3>1.1.3        컨트롤러(Controller)</h3>
+
+<p>컨트롤러는 모델과 뷰의 상호작용이다. 브라우저로 부터 들어온 요청은 컨트롤러에 의해 처리되는데 모델로 부터 데이터를 처리하고 그것을 표현하기 위해 뷰에게 전달해주는 역할을 한다.</p>
+
+<h2>1.2       레일스 모듈(Rails Modules)</h2>
+
+<h3>1.2.1        Action Mailer</h3>
+
+<p>이 모듈은 e-mail 서비스 제공을 담당한다. 이 모듈은 들어오는 메일을 처리하고 새로운 메일을 만든다. 이 모듈은 간단한 텍스트나 복잡한 포맷의 이메일들을 다룰 수 있다. 또한, 이 모듈은 공통적인 작업들을 내장하고 있는데, 잊어버린 암호를 보내는 경우, 환영 메시지, 그리고 다른 종류의 텍스트 기반 메시지 기능을 제공한다. Action Mailer는 Action Controller를 래핑한다. 그래서 Action View에서 웹 페이지를 렌더링하기 위해 사용하는 방법과 같은 방법으로 템플릿을 이용해 email 메시지를 만드는 방법을 제공한다.</p>
+
+<h3>1.2.2        Action Pack</h3>
+
+<p>Action Pack 모듈은 MVC 패턴의 컨트롤러와 뷰 계층을 제공한다. 이 모듈들은 브라우저에 의한 사용자의 요청을 받아서 이 요청들을 액션에 매핑한다. 이러한 액션들은 컨트롤러 계층에서 정의되어 지고 액션들은 브라우저에 디스플레이되어지는 뷰를 렌더링한다. Action Pack은 세 개의 서브 모듈로 나누어져 있는데, Action Dispatch, Action Controller, Action View이다.</p>
+
+<ul>
+<li><p> Action Dispatch: 웹 브라우저 요청의 라우팅을 다룬다. 웹 요청을 파싱하고 쿠키 핸들링, 세션, 요청 메서드 등의 HTTP 에 관한 고급 처리를 수행한다.</p></li>
+<li><p> Action Controller: 이 모듈은 Action Dispatch가 요청을 처리하고 난 후에 해당 컨트롤러에 라우팅한다. 이 모듈은 모든 다른 컨트롤러들이 상속받을 수 있는 기본 컨트롤러를 제공한다. Action Controller는 모델과 뷰를 제어하기 위한 액션들을 포함한다. 이 모듈은 필요에 따라 사용할 수 있는 데이터를 만들고 뷰의 렌더링과 리다이렉션을 제어한다. 게다가 사용자 세션, 애플리케이션 흐름, 캐싱 기능, 헬퍼 모듈과 사전 필터 구현, during과 post processing hooks를 관리한다.</p></li>
+<li><p> Action View: 이것은 Action Controller에 의해 호출된다. 요청된 웹페이지의 표현을 렌더링한다. Action View 는 마스터 레이아웃, 템플릿 룩업과 HTML 생성을 도와주는 헬퍼, 피드, 다른 표현 포맷을 제공한다. 레일스에는 세가지 템플릿 스키마가 있는데 rhtml, rxml, rjs 이다. rhtml 포맷은 ERB(Ruby 코드가 삽입된 HTML)를 사용자에게 HTML뷰로 생성해준다. rxml 은 Ruby를 사용한 XML 문서들을 구성하기 위해 사용되고 rjs 는 AJAX기능을 구현하기 위해 Ruby 코드내에서 동적 자바스크립트 코드를 만드는 것을 허락해준다.</p></li>
+</ul>
+
+
+<h3>1.2.3        Active Model</h3>
+
+<p>Action Pack과 Active Record 모듈 사이의 인터페이스로 정의된다.</p>
+
+<h3>1.2.4        Active Record</h3>
+
+<p>Active Record는 관계 데이터베이스의 데이터를 객체를 통해 관리하기 위해 사용되는 아키텍처 패턴이다. 루비 온 레일스에서 Active Record 모듈은 클래스로 객체 관계 매핑(ORM)을 제공한다. 이 모듈은 데이터베이스 테이블에 연결하는 모델 계층을 Ruby 클래스 표현으로 만든다. 레일스는 설정없이 CRUD 기능을 구현하기 위한 도구들을 제공한다. CRUD는 데이터베이스 내의 레코드를 만들고(create), 읽고(read), 수정하고(update), 지우는(delete) 액션을 Ruby 객체를 통해서 하도록 해준다. 한 객체 표현은 데이터 베이스 각 행(row)을 표현한다. Active Record 는 어떻게 클래스가 네이밍되고 테이블이되고 foreign key 와 primary key가 어떻게 되어야 하는지를 관례에 크게 의존한다.(역자: 즉, 관례로 사용되는 일정한 법칙을 가지고 있다.) 데이터베이스 매핑이 설정을 사용하여 사용될 수 있지만 그러한 액티브 레코드 모듈들이 Rails 관례를 따르는 것을 매우 권장한다.</p>
+
+<p>이 모듈들은 비지니스 로직(모델간의 관계, 검증)에 포함되는 모델 클래스를 생성하고, 자동으로 테이블과 캡슐화된 데이터에 매핑되고, 게터와 세터, 콜백을 제공하고, 또한 여러 데이터베이스를 지원하는데 사용된다.</p>
+
+<h3>1.2.5        Active Resource</h3>
+
+<p>Active Resource 모듈은 RESTful 웹서비스와 비지니스 객체들 사이에 연결을 관리하기 위해 사용된다. 코드의 양을 줄이기 위해 리소스를 매핑하는 Active Record와 같은 원리를 따른다. Active Resource 는 Active Record 가 모델 클래스를 데이터베이스 테이블에 매핑하는 것과 같은 방법으로 모델 클래스들을 원격 REST 리소스에 매핑한다. Active Resource는 HTTP 프로토콜을 강화하고(leverage) 복잡한 구조와 관계를 추측하기 쉽게 만들기 위한 코드 관례를 더해준다. Active Record 는 또한 Active Resource(client)와 RESTful 서비스 사이에서 프록시 기능을 제공하는데 이것은 REST 웹 서비스를 위한 객체 관계 매핑이 구현되면서 이루어진다.  원격 리소스에 대한 요청을 하면,  REST XML 이 생성되고 전송되어 Ruby 객체로 파싱된다.</p>
+
+<h3>1.2.6        RESTful Architecture</h3>
+
+<p>REST는 Representational State Transfer의 약자이다. REST 는 SOAP, WSDL 같은 웹서비스의 대안이다. 모든 CRUD(create, read, update, delete) 동작들이 HTTP 프로토콜에 의존한다. RESTful 웹 서비스는 웹서비스가 완전 무상태(stateless)일때, 제한된 대역폭일때(CRUD 는 SOAP 와 같은 다른 프로토콜에서의 오버헤드가 없기 때문에 모바일 장치에 매우 유용), 데이터가 동적으로 생성되지 않아서 성능 개선을 위해 캐싱을 해야되거나 서비스 생산자와 소비자 상호간의 이해가 있을때 적절하다.</p>
+
+<h3>1.2.7        Active Support</h3>
+
+<p>유틸리티 클래스의 모음과 루비 온 레일스 개발을 위해 유용한 Ruby 라이브러리의 확장이다. 멀티바이트 문자열, 국제화, 타임 존과 테스팅 등의 풍부한 지원을 포함한다.</p>
+
+<h3>1.2.8        Railties</h3>
+
+<p>Railties 는 새로운 애플리케이션을 만드는 Rails 핵심 코드이다. 위에서 설명한 모듈들이 모두 함께 잘 조합될 수 있게 하는(&ldquo;glue&rdquo;-ing) 역할을 한다. 또한, 모든 부트스트래핑 프로세스, 커맨드 라인 인터페이스를 처리하고 Rails 코드 생성기를 제공한다. Rake 는 데이터베이스 작업, 배포, 문서화, 테스팅, 클린업 등을 수행하기 위해 사용되는 커맨드 라인 도구 중 하나이다. Rails는 또한 유닛 테스팅, 뷰와 컨트롤러의 기능 테스트, YAML 을 사용한 테스트 데이터 지원이 되는 내장 테스팅 프레임워크를 제공한다. (코드가 생성될 때 자동으로 test 스텁(코드) 또한 같이 만들어 진다.)</p>
+
+<h1>2. Architectural Solution</h1>
+
+<p>이 아키텍처를 분석하기 위해 Module View와 Component and Connector(C&amp;C) View방식을 활용 하였다. Module View 는 모든 컴포넌트의 정적 뷰를 표현하는 UML 다이어그램을 포함할 것이다. 반면에 Component and Connector(C&amp;C) View는 시스템 아키텍처의 런타임 뷰를 표현하는 UML 다이어그램을 보여줄 것이다.(어떤 컴포넌트가 런타임에 존재하고 어떻게 각 컴포넌트가 커뮤니케이션하는지)</p>
+
+<h2>2.1       Connect and Component View</h2>
+
+<p>C&amp;C View는 컴포넌트, 인터페이스, 커넥터와 시스템을 표현하는 전체 시스템의 동적인 뷰이다. 인터페이스는 UML 인터페이스 표기법으로 표현하였다. 이것은 인터페이스를 간결하게 표현하여 다이어그램이 복잡해지는 것을 피한다. 인터페이스 표현에서 사용되는 UML 표기법과 일치하도록 링크로 커넥터 인스턴스와 관계를 나타낼 것이다. 같은 방법으로 시스템은 UML 서비스 시스템들로 나타내고 있다.</p>
+
+<p><img src="http://imageshack.us/a/img407/9381/rh4k.jpg" alt="Figure 3.  Dynamic View: Ruby on Rails Connector and Component View" /></p>
+
+<h2>2.2       Modules View</h2>
+
+<p>Module 뷰는 모듈로써 코드 구현과 인터페이스 표현으로 그들 사이의 관계를 보여준다. Module 뷰는 모듈, 인터페이스, 집합(집합관계), 일반화와 의존성을 포함한다. 이 뷰들은 아키텍처의 정적 뷰를 표현하기 위한 적절한 방법이다.</p>
+
+<p><img src="http://imageshack.us/a/img600/3431/zm78.jpg" alt="Figure 4. Static View: Ruby on Rails Module View" /></p>
+
+<h1>3. 루비 온 레일스 아키텍처의 위험들</h1>
+
+<p>Rails는 Ruby 언어로 만들어졌기 때문에 언어의 장단점을 그대로 가지고 있다. Ruby는 우아한 문법과 완전한 객체 지향을 지원하는 동적인 스크립트 언어이다. 인터프리터 언어이기 때문에 컴파일 언어인 Java, C++ 보다 느리다. 대부분의 경우에 속도에서의 차이점은 문제가 되지 않는다. 그러나 웹 애플리케이션이 수백만의 동시접속자들을 처리하기 위해 규모를 늘리려고 하면 (scale) 프레임워크 퍼포먼스가 낮아지기 시작한다. Ruby 언어는 컴퓨팅 환경(빠른 연산, 스레드 처리)에 최적화되지 않았기 때문에 높은 동시 처리에 맞지 않는 언어이다. Ruby는 문법이 우아하고 간단하며 빠르게 개발하기 위해 디자인되었다. Ruby는 아직 스레드 지원이 좋지 않고, 많은 다른 스크립트 언어처럼  long-lived 프로세스들을 다루는 데 문제가 있다. 그러나 Java 같은 다른 언어들은 스레드를 효율적으로 처리하기 위해 몇 년간 최적화되어있다. 또 다른 약점은 Ruby의 가비지 콜렉터는 자바의 그것보다 좋지 않아 각 프로세스는 더 많은 메모리를 요구한다. 배포의 관점에서 루비 온 레일스 웹어플이케이션은 PHP 같은 더 일반적인 기술을 사용하는 사이트들보다 배포하기 더 힘들 수도있다.  모든 호스팅 서버들이 Rails를 지원하는 게 아니기 때문이다. 그러나 요즘에는 Rails에 대한 지원이 점점 증가하고 있다.</p>
+
+<p>다음의 특성을 가지는 애플리케이션에는 루비 온 레일스는 맞지 않다:</p>
+
+<ul>
+<li> 단순한 정적 웹사이트 (레일스 프레임워크를 사용하는 것이 오버헤드가 될 수 있다)</li>
+<li> 컨텐츠 관리 시스템</li>
+<li> 많은 양의 기존 코드나 레거시 코드에 의존하는 사이트</li>
+<li> 레거시 데이터베이스 사이트</li>
+<li> 멀티 사이트 서버, 단일 서버에 존재하는 수십 수백 개의 웹사이트가 필요한 상황</li>
+<li> 고성능을 필요로 하는 매우 큰 웹 애플리케이션(동시접속사용자 수백만명)</li>
+</ul>
+
+
+<p>Rails 아키텍처는 best practice를 고려한 관례(convention) 기반의 생산성 증가를 위해 설정의 유연함을 희생했다. 이것은 다른 언어에 경험 있는 개발자가 &ldquo;Rails만의 길&#8221;에 얽매이도록 느끼게 만들 수 있다. 한편으론, Ruby는 우아한 문법, 생산성, 유지 보수성 때문에 속도와 리소스 관리 부분을 희생했다. 그러나 대부분 중소 엔터프라이즈 웹 애플리케이션은 상대적으로 작은 연산을 하고 지연(latency) 같은 요인, 대역폭(bandwidth), 데이터베이스 성능이 크게 중요하지 않다. 이러한 요인들은 수백만 동시 접속자를 처리해야 하는 높은 트래픽의 웹사이트에서 문제가 발생할 때 중요해진다.</p>
+
+<h2>3.1       Twitter case study</h2>
+
+<p>Rails를 사용한 high-트래픽 웹 애플리케이션 중 하나는 Twitter 이다. Twitter는 루비 온 레일스를 사용하여 시작하였으나 그들의 플랫폼을 확장하는데 비용 대비 효과가 없다는 것을 깨달았다. 이것은 주로 루비 온 레일스의 저조한 멀티 스레드 지원 때문이었다. 2011년에 그들은 주당 10억 개 이상의 트윗과 2억 명의 사용자를 갖게 되었다. 2011년에 그들은 Back-end application을 루비 온 레일스에서 Java로 이동하고 3배 더 빠른 검색과 더 좋은 높은 동시접속 수를 처리할 수 있다고 발표하였다.</p>
+
+<p>Twiter 엔지니어링팀은 [1] 과 [2]에 따르면: &ldquo;우리는 노력의 일부분으로서 새로운 real-time 검색 엔진(우리의 백엔드를 MySQL 에서 Lucene의 real-time 버전으로 바꿨다.)을 런칭했다. 지난주, 우리는 우리의 루비 온 레일스 프론트엔드를 위한 교체작업을 했다: Blender라 불리는 Java server로 교체작업을 했는데 우리는 검색 지연을 3배 감소시켰고 몇 달 안에 빠르게 우리는 반복할 수 있다.&rdquo; 그리고 &ldquo;2011년 4월에, 검색 하부 구조에서 루비 온 레일스를 제거하고 검색 지연을 3배 개선하고 처리량을 10배 개선한 Blender라 불리는 Java 서버로 교체했다. 오늘, 우리는 18000QPS(매일 1.6B 쿼리) 서브하고 2200TPS 평균을 인덱싱한다. 더 중요한 건, Blender는 Summize 인수 이후 트위터 검색에서 가장 중요한 사용자 지향 변화(user-facing change)를 만드는  필요한 인프라 구축을 완료했다.&rdquo;</p>
+
+<h2>3.2       Yellopages.com case study</h2>
+
+<p>반면에 Yellopages.com은 Java에서 루비 온 레일스 프레임워크로 이동한 경우이다. 그들이 이러한 변화를 결정한 이유는 유지 보수성 증가, 완전한 URLs의 제어, 세션없이, 좀 더 애자일하게 간다는 주장이다. 그들은 한달 170백만 페이지 뷰와 하루 2.5백만 검색 쿼리를 가진다.</p>
+
+<p>Brian Burridge는 Yellopages.com의 경우를 다음과 같이 설명한다. &ldquo;YelloPages.com은 Java에서 Rails로 이동했다. 그들은 한 달 2천3백만 방문자를 서브한다. 125,000 라인의 자바 코드 대신에 20,000 라인의 Ruby 코드로 전환은 그들이 좀 더 유지보수를 쉽게 할수있도록한다. 최적화된 그들의 사이트는 지금 이전보다 더 빠르다. 4명의 개발자가 3달만에 코드 재작성을 완료했다.&rdquo;</p>
+
+<h1>4.       요약</h1>
+
+<p>루비 온 레일스는 소프트웨어 개발 산업, 오픈 소스 커뮤니티에서 구체적으로 광범위한 지지를 받고 있다. 이러한 지지는 프레임워크가 아키텍트의 계획한 목표와 일관된 아키텍처를 제공할 수 있다는 점을 반영하고 있다.</p>
+
+<p>루비 온 레일스 프레임워크는 프레임워크가 의도한 특성을 성공적으로 보여준다. 이러한 품질 유지의 책임은 서드 파티 컴포넌트에 의해서 결정이 된다. 그리고 성능의 경우에는 개발이나 배포 시간으로 설정되는 웹 서버에 의해 결정이 된다. 이 프레임워크의 가장 큰 강점은 &ldquo;설정 보다는 관례&rdquo;(Convention over Configuration)와 &ldquo;DRY&rdquo;(Don&rsquo;t Repeat Yourself) 원리이다. 이 원리는 품질 특성의 일부를 성취하기 위해서 특정 전략을 다룰때 직관적인 접근을 하게 해준다. 예를 들어 수정성(modifiability)은 (프레임워크가 특정 기능이 기본적인 위치에 배치되기 때문에) 특정 변화의 분리나 집중화로 적은 노력으로 수정 할 수 있다.</p>
+
+<p>반면에, Rails는 Ruby언어의 약점을 그대로 가지고 있다. 특히 저조한 동시성 지원은 루비 온 레일스를 사용하여 만들어진 애플리케이션의 잠재적인 확장성을 저해한다. 또한, 메모리 관리가 다른 랭귀지가 사용하는 것처럼 효율적이지 못한다. 예를 들어 Java는 루비 온 레일스에 비교하여 더 좋은 가비지 콜렉터를 보여준다.</p>
+
+<p>종합적으로,루비 온 레일스 프레임워크 아키텍처가 몇 가지 주의사항을 빼면 의도한 목표의 대부분을 충족한다고 볼 수 있다. 산업과 오픈 소스 커뮤니티 내에서 프레임워크 채택의 정도와 속도는 프레임워크가 가진 가능성에 대한 검증으로 사용될 수 있다. 동시에 우리는 루비 온 레일스 프레임워크의 한계를 보았다. 이러한 한계들은 루비 온 레일스를 지속적해서 발전하게 하는 원동력의 일부가 된다.</p>
+
+<p><em><a href="http://adrianmejia.com/blog/2011/08/11/ruby-on-rails-architectural-design/">원본글</a> 해당 글을 번역하였습니다.</em></p>
+</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+<!-- 
+  <section>
+    <h1>Comments</h1>
+    <div id="facebook_comments" aria-live="polite">
+      <noscript>Please enable JavaScript to view the comments powered by facebook</a></noscript>
+<div
+  class="fb-comments"
+  data-href="http://flowkater.github.io/blog/2013/08/12/rails-architecture/"
+  data-num-posts="2"
+  data-width="470"
+  data-colorscheme="light" ></div>
+    </div>
+  </section>
+ -->
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    Fl0wk27er
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'flowkater';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://flowkater.github.io/blog/2013/08/12/rails-architecture/';
+        var disqus_url = 'http://flowkater.github.io/blog/2013/08/12/rails-architecture/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
