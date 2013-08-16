@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Be a Cool hacker]]></title>
   <link href="http://flowkater.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://flowkater.github.io/"/>
-  <updated>2013-08-16T17:09:12+09:00</updated>
+  <updated>2013-08-16T17:50:39+09:00</updated>
   <id>http://flowkater.github.io/</id>
   <author>
     <name><![CDATA[Fl0wk27er]]></name>
@@ -22,7 +22,7 @@
 
 <h1>1. 소개</h1>
 
-<p>루비 온 레일스(RoR)는 Ruby 프로그래밍 언어로 작성한 오픈 소스 웹프레임워크이다. 레일스의 모든 애플리케이션은 Ruby로 작성한. 루비 온 레일스는 생산성과 애자일(agile) 웹 개발 적용에 중점을 두고 있다.</p>
+<p>루비 온 레일스(RoR)는 Ruby 프로그래밍 언어로 작성한 오픈 소스 웹프레임워크이다. 레일스의 모든 애플리케이션은 Ruby로 작성한다. 루비 온 레일스는 생산성과 애자일(agile) 웹 개발 적용에 중점을 두고 있다.</p>
 
 <p>레일스 프레임워크는 Ruby 언어의 특성을 활용한다. 유키히로 마츠모토(Yukishiro Matzumoto)는 1995년, Perl, Eiffel, Python, Smaltalk 와 그 외 다른 언어에 영향을 받아 이 언어를 디자인했다. 동적 타입, 완전한 객체 지향, 범용성을 가진 스크립트 언어 등이 그 특징이다. Ruby는 우아한 문법과 가능하면 사람이 읽기 쉽게 디자인되었는데 예를 들어 콜론(;)이 없어도 되고 메서드 인자에 괄호가 필요없다. 코드 일부는 영어 문장처럼 쉽게 읽을 수 있다. <!-- more --></p>
 
@@ -178,7 +178,7 @@
 
 <p>종합적으로,루비 온 레일스 프레임워크 아키텍처가 몇 가지 주의사항을 빼면 의도한 목표의 대부분을 충족한다고 볼 수 있다. 산업과 오픈 소스 커뮤니티 내에서 프레임워크 채택의 정도와 속도는 프레임워크가 가진 가능성에 대한 검증으로 사용될 수 있다. 동시에 우리는 루비 온 레일스 프레임워크의 한계를 보았다. 이러한 한계들은 루비 온 레일스를 지속적해서 발전하게 하는 원동력의 일부가 된다.</p>
 
-<p><em><a href="http://adrianmejia.com/blog/2011/08/11/ruby-on-rails-architectural-design/">원본글</a> 해당 글을 번역하였습니다.</em></p>
+<p><em><a href="http://adrianmejia.com/blog/2011/08/11/ruby-on-rails-architectural-design/">원본글</a> 해당 글을 번역하였습니다. 가볍게나마 바쁜 와중에 허접한 번역글을 점검해주신 창원이형에게 감사의 메시지를 전하고 싶습니다.</em></p>
 ]]></content>
   </entry>
   
