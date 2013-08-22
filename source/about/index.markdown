@@ -18,6 +18,7 @@ footer: true
 <br>
 <br>
 <br>
+<br>
 #### Experience
 - Software Maestro 4th
 - CTO at CUKIS, inc.
@@ -34,3 +35,4 @@ footer: true
 <br>
 #### Another
 - [Rioja Vega 팀블로그 - 워드프레스](http://riojavega.wordpress.com/) - SW Maestro 4th Rioja Vega 팀블로그 
+- [Linkedin My Profile](http://www.linkedin.com/pub/jaewoo-carter-cho/50/437/6a9)
