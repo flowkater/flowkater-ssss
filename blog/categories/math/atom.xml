@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Book | Be a Cool hacker]]></title>
-  <link href="http://flowkater.github.io/blog/categories/book/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Math | Be a Cool hacker]]></title>
+  <link href="http://flowkater.github.io/blog/categories/math/atom.xml" rel="self"/>
   <link href="http://flowkater.github.io/"/>
   <updated>2013-08-27T16:11:12+09:00</updated>
   <id>http://flowkater.github.io/</id>
