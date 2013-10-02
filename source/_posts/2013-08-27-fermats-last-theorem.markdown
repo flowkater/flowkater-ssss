@@ -3,7 +3,7 @@ layout: post
 title: "페르마의 마지막 정리를 읽고"
 date: 2013-08-27 14:54
 comments: true
-categories: Book
+categories: Book Math
 published: true
 ---
 
