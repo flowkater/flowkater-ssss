@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Review | Be a Cool hacker]]></title>
   <link href="http://flowkater.github.io/blog/categories/review/atom.xml" rel="self"/>
   <link href="http://flowkater.github.io/"/>
-  <updated>2014-03-04T23:08:36+09:00</updated>
+  <updated>2014-03-04T23:10:16+09:00</updated>
   <id>http://flowkater.github.io/</id>
   <author>
     <name><![CDATA[Fl0wk27er]]></name>
@@ -20,9 +20,12 @@
     <id>http://flowkater.github.io/blog/2014/03/04/review-jco-team-speech</id>
     <content type="html"><![CDATA[<p><small>&nbsp;&nbsp;2014년이 시작되고도 3월이 되었습니다. 마지막 포스팅이 작년 10월쯤인가요. 거의 블로그를 버려두다가 이제 좀 더 자주 포스팅을 해야될 것 같습니다. 항상 좀 제대로 된 글을 써야된다는 부담감에 아예 글쓰기를 시도조차 안하는 것 같애서 그냥 제 글의 퀄리티보다는 좀 더 형식없이 자유롭게 글을 많이 쓰자로 가야될 것 같습니다.</p>
 
-<p>&nbsp;&nbsp;일단 근황은 많은 일이 있었네요. 소프트웨어 마에스트로 4th 연수생 입장으로 프로젝트를 진행하면서 무사히 2단계 합격을 해서 프로젝트를 잘 진행하고 있고 2014년도 마이크로소프트웨어 잡지에도 기고(이건 다시 포스팅할게요.)하고 2월에는 우리나라에서 가장 큰 자바 개발자 행사인 JCO에서 발표를 하기도 했습니다. 그래서 오늘은 그 발표 후기에 대해 한번 써보자! 입니다.</small> <!-- more --></p>
+<p>&nbsp;&nbsp;일단 근황은 많은 일이 있었네요. 소프트웨어 마에스트로 4th 연수생 입장으로 프로젝트를 진행하면서 무사히 2단계 합격을 해서 프로젝트를 잘 진행하고 있고 2014년도 마이크로소프트웨어 잡지에도 기고(이건 다시 포스팅할게요.)하고 2월에는 우리나라에서 가장 큰 자바 개발자 행사인 JCO에서 발표를 하기도 했습니다. 그래서 오늘은 그 발표 후기에 대해 한번 써보자! 입니다.</small></p>
 
 <p><img src="http://imageshack.com/a/img607/5356/5cld.png" alt="JCO Logo" /></p>
+
+<!-- more -->
+
 
 <p>&nbsp;&nbsp;<a href="http://www.jco.or.kr/">JCO</a>는 &ldquo;국내 자바 개발자들에게 최신 기술과 정보, 트렌드를 전달하고 함께 공유할 수 있는 장을 마련하는 단체이고, 외국 벤더와 외국 커뮤니티와의 교류를 통해서 국내 개발자들에게 최신 자바 소식을 전달해주는 역할을 수행하고 있는 단체입니다.&rdquo; 라고 소개가 되고 있는데 한마디로 국내 최대 자바 개발자 커뮤니티가 아닌가 합니다.</p>
 
