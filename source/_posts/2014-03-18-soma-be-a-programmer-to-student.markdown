@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "프로그래밍 초보자에게 필요한 것..?"
+title: "방황하는 대학생 프로그래머에게 필요한 것..?"
 date: 2014-03-18 23:09
 comments: true
 categories: Post

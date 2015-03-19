@@ -20,19 +20,10 @@ footer: true
 <br>
 <br>
 #### Experience
+- CEO at GpleLab
 - Software Maestro 4th
 - CTO at CUKIS, inc.
 
 <br>
-#### Personal Project
-- [Today Breaker - 신개념 스터디 플래너](https://play.google.com/store/apps/details?id=com.autoschedule.proto&feature=search_result#?t=W251bGwsMSwyLDEsImNvbS5hdXRvc2NoZWR1bGUucHJvdG8iXQ..)
-- [Read With Me - 원서 읽기 도우기](http://readwithme.herokuapp.com/)
-
-<br>
-#### Group
-- [Be a Rubyists](https://www.facebook.com/groups/BeRubyist/) Ruby, Javascript, Scala 스터디
-
-<br>
 #### Another
-- [Rioja Vega 팀블로그 - 워드프레스](http://riojavega.wordpress.com/) - SW Maestro 4th Rioja Vega 팀블로그 
 - [Linkedin My Profile](http://www.linkedin.com/pub/jaewoo-carter-cho/50/437/6a9)
