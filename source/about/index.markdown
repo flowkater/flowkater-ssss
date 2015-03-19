@@ -12,7 +12,7 @@ footer: true
 </div>
 <div style="padding-left:170px;">
 	<h3>Flowkater a.k.a Fl0wk27er</h3>
-	<p style="margin-bottom:5px;"><strong>Introduce</strong> : 루비를 좋아하고 알고리즘에 관심이 많습니다. 오픈소스 들여다(만)보기가 취미이고 고객이 없는 아이템 개발이 특기입니다.(..) 매일 운동하고 음악에 관심이 많으며 쿨한 해커가 되는 것이 꿈입니다.</p>
+	<p style="margin-bottom:5px;"><strong>Introduce</strong> : 루비를 좋아하고 알고리즘에 관심이 많습니다. 오픈소스 들여다(만)보기가 취미이고 고객이 없는 아이템 개발이 특기입니다.(..) 매일 운동하고 음악에 관심이 많으며 여행을 좋아합니다. 사람들의 삶을 바꾸는 마법과 같은 소프트웨어에 항상 매료되어있습니다.</p>
 </div>
 <br>
 <br>
