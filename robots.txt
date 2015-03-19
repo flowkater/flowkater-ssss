@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Disallow:
 
-Sitemap: http://flowkater.github.io/sitemap.xml 
+Sitemap: http://flowkater.github.io/sitemap.xml
