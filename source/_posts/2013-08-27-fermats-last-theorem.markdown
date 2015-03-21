@@ -12,7 +12,7 @@ published: true
 **“Cuius rei demonstrationem mirabilem sane detexi hanc marginis exiguitas non caperet.
 나는 경이적인 방법으로 이 정리를 증명했다. 그러나 책의 여백이 너무 좁아 여기에 옮기지는 않겠다.”**  
 &nbsp;
-페르마의 마지막 정리란,  <!-- more -->
+페르마의 마지막 정리란, 
 	"x^n+y^n=z^n; n이 3이상의 정수일 때, 이 방정식을 만족하는 정수해 x, y, z는 존재하지 않는다."
 이다.  
 &nbsp;그러나 페르마는 이 정리를 자신의 [아리스메티카]에 코멘트하면서 "나는 경이적인 방법으로 이 정리를 증명했다. 그러나 책의 여백이 너무 좁아 여기에 옮기지는 않겠다." 라는 발칙한(?) 말을 남겨놓았다.  
